@@ -1,0 +1,15 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="container">
+  <table>
+    {% for i in range(9) %}
+    <tr>
+      {% for in in range(9) %}
+      <td><input type="number" class="input" /></td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+  <button class="btn-solve">Resolver</button>
+</div>
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+{% endblock %}
