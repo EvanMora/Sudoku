@@ -1,10 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('sudoku.html')
 
-if __name__ == '__main__':
+@app.route("/")
+def home():
+    return render_template("sudoku.html")
+
+
+@app.route("/<sudoku>")
+def take_sudoku(sudoku):
+    print(sudoku)
+    return "hello"
+
+
+if __name__ == "__main__":
     app.run(debug=True)

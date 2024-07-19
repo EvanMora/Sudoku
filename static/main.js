@@ -11,8 +11,9 @@ inputs.forEach((element) => {
 });
 
 btnSolve.addEventListener("click", () => {
-  console.log(takeData(inputs));
-  console.log("sent to the server");
+  let sudokuJSON = JSON.stringify(takeData(inputs));
+  let url = `http://127.0.0.1:5000/${sudokuJSON}`;
+  fetch(url);
 });
 
 function takeData(data) {
